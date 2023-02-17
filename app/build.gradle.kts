@@ -56,6 +56,7 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":common"))
     implementation(project(":feature:auth"))
+    implementation(project(":navigator"))
 
     // Kotlin
     implementation(KotlinDependencies.kotlin)
