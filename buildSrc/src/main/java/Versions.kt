@@ -38,7 +38,7 @@ object Versions {
     const val kotlinxSerializationConverterVersion = "0.8.0"
     const val junitVersion = "4.13.2"
     const val espressoVersion = "3.4.0"
-    const val androidTestVersion = "1.1.3"
+    const val androidTestVersion = "1.1.5"
     const val ossPluginVersion = "0.10.4"
     const val ossVersion = "17.0.0"
     const val timberVersion = "4.7.1"

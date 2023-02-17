@@ -37,7 +37,7 @@ object AndroidXDependencies {
 
 object TestDependencies {
     const val jUnit = "junit:junit:${Versions.junitVersion}"
-    const val androidTest = "androidx.test.ext:junit:${Versions.androidTestVersion}"
+    const val androidTest = "androidx.test.ext:junit-ktx:${Versions.androidTestVersion}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoVersion}"
     const val room = "androidx.room:room-testing:${Versions.roomVersion}"
 }
@@ -114,5 +114,4 @@ object ClassPathPlugins {
 
 object WorkManagerDependency{
     const val runtimeKtx =  "androidx.work:work-runtime-ktx:${Versions.workVersion}"
-
 }
