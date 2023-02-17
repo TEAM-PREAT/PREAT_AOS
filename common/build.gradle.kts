@@ -14,6 +14,9 @@ android {
 }
 
 dependencies {
+    // Modules
+    implementation(project(":navigator"))
+
     // Android Core
     implementation(AndroidXDependencies.coreKtx)
     implementation(AndroidXDependencies.appCompat)
