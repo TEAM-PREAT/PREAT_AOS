@@ -5,6 +5,7 @@
     <string name="app_name">프릿</string>
 
     <!-- Login -->
+    <string name="welcome">반가워요 &#x1F590;\n<font color='#FF6C22'><b>PREAT</b></font>을\n즐겨보세요!</string>
     <string name="kakao_login">카카오톡으로 1초만에 로그인</string>
 
 </resources>
