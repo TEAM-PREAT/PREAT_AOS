@@ -4,7 +4,6 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.edit
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.freetreechair.common.util.EventObserver

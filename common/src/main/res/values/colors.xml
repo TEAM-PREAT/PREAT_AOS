@@ -30,6 +30,7 @@
     <color name="gray_90">#262f3d</color>
     <color name="gray_950">#191f28</color>
     <color name="black">#000000</color>
+    <color name="transparent">#00FF0000</color>
 
     <color name="kakao_yellow">#F6E24B</color>
     <color name="kakao_brown">#402829</color>
