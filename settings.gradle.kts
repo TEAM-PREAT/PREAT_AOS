@@ -5,5 +5,6 @@ include(
     ":data",
     ":common",
     ":feature",
-    ":feature:auth"
+    ":feature:auth",
+    ":navigator"
 )

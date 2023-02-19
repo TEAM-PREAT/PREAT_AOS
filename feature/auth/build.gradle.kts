@@ -40,6 +40,7 @@ android {
 dependencies {
     implementation(project(":domain"))
     implementation(project(":common"))
+    implementation(project(":navigator"))
 
     // Android Core
     implementation(AndroidXDependencies.coreKtx)

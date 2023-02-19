@@ -14,6 +14,9 @@ android {
 }
 
 dependencies {
+    // Modules
+    implementation(project(":navigator"))
+
     // Android Core
     implementation(AndroidXDependencies.coreKtx)
     implementation(AndroidXDependencies.appCompat)
@@ -21,6 +24,7 @@ dependencies {
     implementation(AndroidXDependencies.legacy)
     implementation(AndroidXDependencies.coroutines)
     implementation(AndroidXDependencies.fragment)
+    implementation(AndroidXDependencies.splashScreen)
     coreLibraryDesugaring(AndroidXDependencies.desugarLibrary)
 
     // Dagger-Hilt
