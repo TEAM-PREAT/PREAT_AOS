@@ -6,5 +6,6 @@ include(
     ":common",
     ":feature",
     ":feature:auth",
+    ":feature:sign-up",
     ":navigator"
 )
