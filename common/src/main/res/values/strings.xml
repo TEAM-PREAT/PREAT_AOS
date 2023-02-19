@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Common -->
+    <string name="app_name">프릿</string>
+
+    <!-- Login -->
+    <string name="kakao_login">카카오톡으로 1초만에 로그인</string>
+
+</resources>
