@@ -24,6 +24,7 @@ dependencies {
     implementation(AndroidXDependencies.legacy)
     implementation(AndroidXDependencies.coroutines)
     implementation(AndroidXDependencies.fragment)
+    implementation(AndroidXDependencies.splashScreen)
     coreLibraryDesugaring(AndroidXDependencies.desugarLibrary)
 
     // Dagger-Hilt
