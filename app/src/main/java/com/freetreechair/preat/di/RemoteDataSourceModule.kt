@@ -2,6 +2,8 @@ package com.freetreechair.preat.di
 
 import com.freetreechair.data.login.remote.RemoteLoginDataSource
 import com.freetreechair.data.login.remote.RemoteLoginDataSourceImpl
+import com.freetreechair.data.nickname.remote.RemoteNicknameDataSource
+import com.freetreechair.data.nickname.remote.RemoteNicknameDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -14,4 +16,7 @@ interface RemoteDataSourceModule {
     @Binds
     @Singleton
     fun bindsRemoteLoginDataSource(source: RemoteLoginDataSourceImpl): RemoteLoginDataSource
+    @Binds
+    @Singleton
+    fun bindsRemoteNicknameDataSource(source: RemoteNicknameDataSourceImpl): RemoteNicknameDataSource
 }
