@@ -32,7 +32,7 @@ abstract class BaseViewModel : ViewModel() {
             is CertificateException -> _moveToLogin.postValue(Event(true))
             is RuntimeException -> _errorMessage.postValue(
                 Event(
-                    "권한을 허용하지 않으면 다메다메 서비스를 사용하기 어렵습니다.\n" +
+                    "권한을 허용하지 않으면 프릿 서비스를 사용하기 어렵습니다.\n" +
                         "\n" +
                         "[설정] > [권한] 에서 권한을 허용해주세요."
                 )
