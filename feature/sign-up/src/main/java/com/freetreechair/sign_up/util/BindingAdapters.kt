@@ -1,4 +1,4 @@
-package com.freetreechair.sign_up
+package com.freetreechair.sign_up.util
 
 import android.view.View
 import android.widget.TextView
