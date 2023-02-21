@@ -13,6 +13,7 @@
     <string name="input_nickname">닉네임을\n입력해볼까요?</string>
     <string name="hint_nickname">닉네임을 입력해주세요</string>
     <string name="duplicated_nickname">중복된 닉네임입니다.</string>
-    <string name="invalid_nickname">사용할 수 없는 닉네임입니다.</string>
+    <string name="invalid_nickname">닉네임에 특수문자가 포함될 수 없습니다.</string>
+    <string name="over_limit_nickname">닉네임은 12자리를 초과할 수 없습니다.</string>
 
 </resources>
