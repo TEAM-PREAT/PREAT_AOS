@@ -28,6 +28,7 @@ class LoginFragment : BindingFragment<FragmentLoginBinding>(R.layout.fragment_lo
         initLoginObserver()
         initLoginFailureMessageObserver()
         initMoveToHomeObserver()
+        initMoveToSignUpObserver()
     }
 
     private fun onLoginButtonClick() {
@@ -64,6 +65,25 @@ class LoginFragment : BindingFragment<FragmentLoginBinding>(R.layout.fragment_lo
 
     private fun navigateMainActivity() {
         mainNavigator.navigateMain(requireActivity())
+        requireActivity().finish()
+    }
+
+    private fun initMoveToSignUpObserver() {
+        loginViewModel.navigateToSignUp.observe(
+            viewLifecycleOwner,
+            EventObserver {
+                navigateSignUpActivity(
+                    it
+                )
+            }
+        )
+    }
+
+    private fun navigateSignUpActivity(platform: String) {
+        mainNavigator.navigateSignUp(
+            context = requireContext(),
+            platform = Pair("platform", platform)
+        )
         requireActivity().finish()
     }
 
