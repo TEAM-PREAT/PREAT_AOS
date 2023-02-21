@@ -9,6 +9,25 @@
         android:id="@+id/nicknameFragment"
         android:name="com.freetreechair.sign_up.nickname.NicknameFragment"
         android:label="NicknameFragment"
-        tools:layout="@layout/fragment_nickname" />
+        tools:layout="@layout/fragment_nickname">
+        <action
+            android:id="@+id/action_nicknameFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment"
+            app:enterAnim="@anim/view_fade_in"
+            app:exitAnim="@anim/view_fade_out"
+            app:popEnterAnim="@anim/view_fade_in"
+            app:popExitAnim="@anim/view_fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.freetreechair.sign_up.welcome.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/fragment_welcome">
+        <argument
+            android:name="nickname"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
 
 </navigation>
