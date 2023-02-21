@@ -59,4 +59,7 @@ dependencies {
 
     // RxKotlin
     implementation(ThirdPartyDependencies.rxKotlin)
+
+    // Third Party Library
+    implementation(ThirdPartyDependencies.lottie)
 }
