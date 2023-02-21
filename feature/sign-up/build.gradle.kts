@@ -9,6 +9,7 @@ plugins {
     kotlin("android")
     id("dagger.hilt.android.plugin")
     kotlin("kapt")
+    id("androidx.navigation.safeargs")
 }
 
 android {
@@ -52,4 +53,10 @@ dependencies {
     // ImageLoading Library
     implementation(ThirdPartyDependencies.coil)
     implementation(ThirdPartyDependencies.glide)
+
+    // RxBinding
+    implementation(ThirdPartyDependencies.rxBinding)
+
+    // RxKotlin
+    implementation(ThirdPartyDependencies.rxKotlin)
 }
