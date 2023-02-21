@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.freetreechair.common.base.BaseViewModel
 import com.freetreechair.common.util.Event
 import com.freetreechair.domain.login.model.DomainLoginRequest
 import com.freetreechair.domain.login.usecase.LoginUseCases
@@ -15,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val loginUseCases: LoginUseCases
-) : ViewModel() {
+) : BaseViewModel() {
 
     private lateinit var platform: String
 
@@ -25,8 +26,8 @@ class LoginViewModel @Inject constructor(
     private val _navigateToHome = MutableLiveData<Event<Boolean>>()
     val navigateToHome: LiveData<Event<Boolean>> = _navigateToHome
 
-    private val _navigateToSignUp = MutableLiveData<Event<Boolean>>()
-    val navigateToSignUp: LiveData<Event<Boolean>> = _navigateToSignUp
+    private val _navigateToSignUp = MutableLiveData<Event<String>>()
+    val navigateToSignUp: LiveData<Event<String>> = _navigateToSignUp
 
     private val _loginFailureMessage = MutableLiveData<String>()
     val loginFailureMessage: LiveData<String> = _loginFailureMessage
@@ -40,7 +41,7 @@ class LoginViewModel @Inject constructor(
                 )
             ).onSuccess {
                 if (it.isNewUser) {
-                    _navigateToSignUp.postValue(Event(true))
+                    _navigateToSignUp.postValue(Event(platform))
                 } else {
                     _navigateToHome.postValue(Event(true))
                 }

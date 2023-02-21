@@ -3,8 +3,20 @@
 
     <!-- Common -->
     <string name="app_name">프릿</string>
+    <string name="ok">확인</string>
+    <string name="sir">님</string>
 
     <!-- Login -->
+    <string name="welcome">반가워요 &#x1F590;\n<font color='#FF6C22'><b>PREAT</b></font>을\n즐겨보세요!</string>
     <string name="kakao_login">카카오톡으로 1초만에 로그인</string>
+
+    <!-- Nickname -->
+    <string name="input_nickname">닉네임을\n입력해볼까요?</string>
+    <string name="hint_nickname">닉네임을 입력해주세요</string>
+    <string name="duplicated_nickname">중복된 닉네임입니다.</string>
+    <string name="invalid_nickname">닉네임에 특수문자가 포함될 수 없습니다.</string>
+    <string name="over_limit_nickname">닉네임은 12자리를 초과할 수 없습니다.</string>
+    <string name="welcome_nickname">환영합니다!</string>
+    <string name="button_input_info">정보 입력하러 가기</string>
 
 </resources>

@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".PreatApplication"
+        android:name="com.freetreechair.preat.PreatApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,12 +15,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Preat"
+        android:theme="@style/Theme.PreatAndroid"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.freetreechair.preat.MainActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.freetreechair.sign_up.SignUpActivity"
             android:exported="false" />
 
         <activity
