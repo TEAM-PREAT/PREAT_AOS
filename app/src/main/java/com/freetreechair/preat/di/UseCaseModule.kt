@@ -1,5 +1,10 @@
 package com.freetreechair.preat.di
 
+import com.freetreechair.domain.disgust.repository.DisgustRepository
+import com.freetreechair.domain.disgust.usecase.DisgustUseCases
+import com.freetreechair.domain.disgust.usecase.FetchDisgustUseCase
+import com.freetreechair.domain.disgust.usecase.SaveDisgustUseCase
+import com.freetreechair.domain.disgust.usecase.SelectDisgustUseCase
 import com.freetreechair.domain.login.repository.LoginRepository
 import com.freetreechair.domain.login.usecase.GetAccessTokenUseCase
 import com.freetreechair.domain.login.usecase.LoginUseCases
@@ -34,6 +39,16 @@ object UseCaseModule {
         return NicknameUseCases(
             checkIsNicknameDuplicatedUseCase = CheckIsNicknameDuplicatedUseCase(repository),
             saveNicknameUseCase = SaveNicknameUseCase(repository)
+        )
+    }
+
+    @ViewModelScoped
+    @Provides
+    fun providesDisgustUseCase(repository: DisgustRepository): DisgustUseCases {
+        return DisgustUseCases(
+            fetchDisgustUseCase = FetchDisgustUseCase(repository),
+            selectDisgustUseCase = SelectDisgustUseCase(repository),
+            saveDisgustUseCase = SaveDisgustUseCase(repository)
         )
     }
 }
