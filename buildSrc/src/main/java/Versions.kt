@@ -57,6 +57,10 @@ object Versions {
     const val progressViewVersion = "1.1.3"
     const val workVersion = "2.7.1"
 
+    const val composeVersion = "1.3.1"
+    const val composeCompilerVersion = "1.4.2"
+    const val lottieComposeVersion = "6.0.0"
+
     val javaVersion = JavaVersion.VERSION_11
     const val jvmVersion = "11"
 }
