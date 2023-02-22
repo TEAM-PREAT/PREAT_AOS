@@ -19,4 +19,8 @@
     <string name="welcome_nickname">환영합니다!</string>
     <string name="button_input_info">정보 입력하러 가기</string>
 
+    <!-- Disgust -->
+    <string name="let_me_know_disgusts">싫어하는 음식을 알려주세요!</string>
+    <string name="search_disgusts">싫어하는 음식을 검색해주세요.</string>
+
 </resources>
