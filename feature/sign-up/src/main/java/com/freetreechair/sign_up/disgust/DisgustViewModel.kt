@@ -32,30 +32,46 @@ class DisgustViewModel @Inject constructor(
     val disgustUiState: StateFlow<UiState<List<UIDisgust>>>
         get() = _disgustUiState.asStateFlow()
 
+    init {
+        fetchDisgusts()
+    }
+
     fun fetchDisgusts() {
         viewModelScope.launch {
             _disgustUiState.value = UiState.Loading
             disgustUseCases.fetchDisgustUseCase(
                 query = query.value
-            ).onSuccess {
-                state = it
-                _disgustUiState.value = UiState.Success(it)
+            ).onSuccess { response ->
+                state = if (state.isEmpty()) {
+                    response
+                } else {
+                    val old = state.filter { it.isChecked }
+                    val oldIds = mutableSetOf<Int>()
+                    old.forEach {
+                        oldIds.add(it.id)
+                    }
+                    val new = response.filter { it.id !in oldIds }
+                    old.union(new).toList()
+                }
+                _disgustUiState.value = UiState.Success(state)
             }.onFailure {
                 _disgustUiState.value = UiState.Failure(it.message)
             }
         }
     }
 
-    fun updateDisgusts(id: Int) {
-        state = state.map {
-            if (it.id == id) {
-                it.copy(
-                    isChecked = !it.isChecked
-                )
-            } else it
+    fun updateDisgusts(disgustId: Int?) {
+        disgustId?.let { id ->
+            state = state.map {
+                if (it.id == id) {
+                    it.copy(
+                        isChecked = !it.isChecked
+                    )
+                } else it
+            }
+            _disgustUiState.value = UiState.Success(state)
         }
         isButtonClickable.value = state.any { it.isChecked }
-        _disgustUiState.value = UiState.Success(state)
     }
 
     fun saveDisgusts(): String {
