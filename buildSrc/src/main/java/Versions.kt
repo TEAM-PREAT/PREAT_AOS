@@ -58,6 +58,7 @@ object Versions {
     const val workVersion = "2.7.1"
 
     const val composeVersion = "1.3.1"
+    const val composeMaterial3Version = "1.0.1"
     const val composeCompilerVersion = "1.4.2"
     const val lottieComposeVersion = "6.0.0"
 
