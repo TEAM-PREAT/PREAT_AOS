@@ -1,11 +1,11 @@
 package com.freetreechair.sign_up.disgust
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.freetreechair.common.base.BindingFragment
 import com.freetreechair.common.extension.setOnSingleClickListener
 import com.freetreechair.common.extension.setQueryDebounce
@@ -24,7 +24,6 @@ class DisgustFragment : BindingFragment<FragmentDisgustBinding>(R.layout.fragmen
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.vm = disgustViewModel
-        disgustViewModel.fetchDisgusts()
         setupUI()
         observeDisgusts()
         updateDisgustsAsInputQuery()
@@ -39,7 +38,8 @@ class DisgustFragment : BindingFragment<FragmentDisgustBinding>(R.layout.fragmen
         disgustViewModel.disgustUiState.flowWithLifecycle(viewLifecycleOwner.lifecycle).onEach {
             when (it) {
                 is UiState.Success -> {
-                    disgustAdapter.submitList(it.data.toMutableList())
+                    disgustAdapter.submitList(it.data)
+                    disgustViewModel.updateDisgusts(disgustId = null)
                 }
                 is UiState.Failure -> {
                     it.message?.let { msg ->
@@ -56,7 +56,7 @@ class DisgustFragment : BindingFragment<FragmentDisgustBinding>(R.layout.fragmen
             binding.etSearch.setQueryDebounce(object :
                     (String) -> Unit {
                 override fun invoke(it: String) {
-                    if (it.isNotEmpty()) disgustViewModel.fetchDisgusts()
+                    disgustViewModel.fetchDisgusts()
                 }
             })
         disgustViewModel.addDisposable(queryEditTextSubscription)
@@ -70,8 +70,7 @@ class DisgustFragment : BindingFragment<FragmentDisgustBinding>(R.layout.fragmen
         with(binding) {
             btnOk.setOnClickListener {
                 disgustViewModel.saveDisgusts()
-                Log.d("logging", disgustViewModel.saveDisgusts())
-                // TODO navigate
+                findNavController().navigate(R.id.action_disgustFragment_to_tasteFragment)
             }
             btnDelete.setOnSingleClickListener {
                 etSearch.text = null

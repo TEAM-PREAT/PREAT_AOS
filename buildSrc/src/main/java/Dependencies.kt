@@ -121,5 +121,8 @@ object WorkManagerDependency {
 object ComposeDependency {
     const val composeUi = "androidx.compose.ui:ui:${Versions.composeVersion}"
     const val composeMaterial = "androidx.compose.material:material:${Versions.composeVersion}"
+    const val composeMaterial3 = "androidx.compose.material3:material3:${Versions.composeMaterial3Version}"
+    const val composeMaterial3Window =
+        "androidx.compose.material3:material3-window-size-class:${Versions.composeMaterial3Version}"
     const val composeUiTool = "androidx.compose.ui:ui-tooling-preview:${Versions.composeVersion}"
 }

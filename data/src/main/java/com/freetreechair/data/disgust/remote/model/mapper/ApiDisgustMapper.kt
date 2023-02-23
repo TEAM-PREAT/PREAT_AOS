@@ -11,7 +11,7 @@ class ApiDisgustMapper @Inject constructor() : ApiMapper<ApiDisgustResponse?, UI
         return UIDisgust(
             id = apiEntity?.id ?: -1,
             name = apiEntity?.food.orEmpty(),
-            imageUrl = apiEntity?.imgUrl.orEmpty(),
+            imageUrl = apiEntity?.imageUrl.orEmpty(),
             isChecked = false
         )
     }

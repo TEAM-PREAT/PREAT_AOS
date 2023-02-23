@@ -5,6 +5,8 @@
     <string name="app_name">프릿</string>
     <string name="ok">확인</string>
     <string name="sir">님</string>
+    <string name="zero">0</string>
+    <string name="hundred">100</string>
 
     <!-- Login -->
     <string name="welcome">반가워요 &#x1F590;\n<font color='#FF6C22'><b>PREAT</b></font>을\n즐겨보세요!</string>
@@ -22,5 +24,19 @@
     <!-- Disgust -->
     <string name="let_me_know_disgusts">싫어하는 음식을 알려주세요!</string>
     <string name="search_disgusts">싫어하는 음식을 검색해주세요.</string>
+
+    <!-- Taste -->
+    <string name="let_me_know_taste">입맛을 알려주세요!</string>
+    <string name="spicy">맵기</string>
+    <string name="sugar">당도</string>
+    <string name="salt">짠맛</string>
+    <string name="spicy_freshman">맵찔이</string>
+    <string name="spicy_sophomore">신라면</string>
+    <string name="spicy_junior">불닭볶음면</string>
+    <string name="spicy_senior">맵고수</string>
+    <string name="sugar_freshman">거의 달지 않은 맛</string>
+    <string name="sugar_senior">가장 단 맛</string>
+    <string name="salt_freshman">거의 짜지 않은 맛</string>
+    <string name="salt_senior">가장 짠 맛</string>
 
 </resources>

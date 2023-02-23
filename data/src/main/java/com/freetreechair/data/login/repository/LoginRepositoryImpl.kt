@@ -53,6 +53,6 @@ class LoginRepositoryImpl @Inject constructor(
                 "${this.javaClass.name}_makeLoginRequest"
             )
         }
-        return Result.failure(IllegalStateException("NetworkError or UnKnownError please check timber"))
+        return Result.failure(IllegalStateException("서버 에러가 발생하였습니다."))
     }
 }

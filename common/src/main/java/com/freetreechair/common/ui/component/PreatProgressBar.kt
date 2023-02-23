@@ -1,4 +1,4 @@
-package com.freetreechair.common.component
+package com.freetreechair.common.ui.component
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Surface

@@ -6,7 +6,7 @@ object Versions {
     const val kotlinCoroutinesVersion = "1.6.0"
     const val coreKtxVersion = "1.9.0"
     const val appCompatVersion = "1.6.0"
-    const val materialDesignVersion = "1.5.0"
+    const val materialDesignVersion = "1.8.0"
     const val constraintLayoutVersion = "2.1.3"
     const val legacySupportVersion = "1.0.0"
     const val hiltVersion = "2.44"
@@ -58,6 +58,7 @@ object Versions {
     const val workVersion = "2.7.1"
 
     const val composeVersion = "1.3.1"
+    const val composeMaterial3Version = "1.0.1"
     const val composeCompilerVersion = "1.4.2"
     const val lottieComposeVersion = "6.0.0"
 
