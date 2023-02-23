@@ -5,7 +5,7 @@ import com.freetreechair.domain.disgust.repository.DisgustRepository
 class SaveDisgustUseCase(
     private val repository: DisgustRepository
 ) {
-    operator fun invoke(disgusts: List<Int>) {
-        
+    operator fun invoke(disgusts: String) {
+        repository.saveDisgusts(disgusts)
     }
 }
