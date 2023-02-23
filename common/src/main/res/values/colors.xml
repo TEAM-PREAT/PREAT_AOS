@@ -35,4 +35,8 @@
     <color name="kakao_yellow">#F6E24B</color>
     <color name="kakao_brown">#402829</color>
 
+    <color name="font_yellow">#FFB800</color>
+    <color name="font_orange">#FF7020</color>
+    <color name="font_red">#FF3D00</color>
+
 </resources>

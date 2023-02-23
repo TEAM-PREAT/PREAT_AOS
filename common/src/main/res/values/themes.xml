@@ -117,4 +117,15 @@
         <item name="android:textSize">12sp</item>
     </style>
 
+    <style name="caption_2">
+        <item name="android:fontFamily">@font/noto_sans_cjkkr_regular</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="PreatSeekbar" parent="Widget.Material3.Tooltip">
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/splash_orange</item>
+    </style>
+
 </resources>
