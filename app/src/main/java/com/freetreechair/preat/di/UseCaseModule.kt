@@ -13,6 +13,9 @@ import com.freetreechair.domain.nickname.repository.NicknameRepository
 import com.freetreechair.domain.nickname.usecase.CheckIsNicknameDuplicatedUseCase
 import com.freetreechair.domain.nickname.usecase.NicknameUseCases
 import com.freetreechair.domain.nickname.usecase.SaveNicknameUseCase
+import com.freetreechair.domain.taste.repository.TasteRepository
+import com.freetreechair.domain.taste.usecase.SaveTasteUseCase
+import com.freetreechair.domain.taste.usecase.TasteUseCases
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -47,6 +50,14 @@ object UseCaseModule {
         return DisgustUseCases(
             fetchDisgustUseCase = FetchDisgustUseCase(repository),
             saveDisgustUseCase = SaveDisgustUseCase(repository)
+        )
+    }
+
+    @ViewModelScoped
+    @Provides
+    fun providesTasteUseCase(repository: TasteRepository): TasteUseCases {
+        return TasteUseCases(
+            saveTasteUseCase = SaveTasteUseCase(repository)
         )
     }
 }
