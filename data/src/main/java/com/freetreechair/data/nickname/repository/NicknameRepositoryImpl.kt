@@ -28,7 +28,7 @@ class NicknameRepositoryImpl @Inject constructor(
             is NetworkState.UnknownError -> Timber.tag("${this.javaClass.name}_checkIsNicknameDuplicated")
                 .d(response.t)
         }
-        return Result.failure(IllegalStateException("NetworkError or UnKnownError please check timber"))
+        return Result.failure(IllegalStateException("서버 에러가 발생하였습니다."))
     }
 
     override fun saveNickname(nickname: String) {

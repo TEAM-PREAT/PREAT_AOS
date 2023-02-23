@@ -18,9 +18,9 @@ class DisgustRepositoryImpl @Inject constructor(
     override suspend fun fetchDisgusts(query: String?): Result<List<UIDisgust>> {
         when (val disgusts = remoteDisgustDataSource.getDisgusts(query)) {
             is NetworkState.Success -> return Result.success(
-                disgusts.body.data.map {
+                disgusts.body.data?.map {
                     apiDisgustMapper.mapToDomain(it)
-                }
+                } ?: emptyList()
             )
             is NetworkState.Failure -> {
                 return Result.failure(
@@ -32,8 +32,9 @@ class DisgustRepositoryImpl @Inject constructor(
             is NetworkState.UnknownError -> Timber.tag("${this.javaClass.name}_fetchDisgusts")
                 .d(disgusts.t)
         }
-        return Result.failure(IllegalStateException("NetworkError or UnKnownError please check timber"))
+        return Result.failure(IllegalStateException("서버 에러가 발생하였습니다."))
     }
+
     override fun saveDisgusts(disgusts: String) {
         preferencesDataSource.saveDisgusts(disgusts)
     }
