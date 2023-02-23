@@ -21,11 +21,17 @@
 
         <activity
             android:name="com.freetreechair.preat.MainActivity"
-            android:exported="false" />
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
 
         <activity
             android:name="com.freetreechair.sign_up.SignUpActivity"
-            android:exported="false" />
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
 
         <activity
             android:name="com.freetreechair.auth.AuthActivity"
