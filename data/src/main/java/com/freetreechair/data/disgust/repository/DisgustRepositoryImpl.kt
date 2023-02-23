@@ -4,12 +4,14 @@ import com.freetreechair.common.exception.RetrofitFailureStateException
 import com.freetreechair.data.NetworkState
 import com.freetreechair.data.disgust.remote.RemoteDisgustDataSource
 import com.freetreechair.data.disgust.remote.model.mapper.ApiDisgustMapper
+import com.freetreechair.data.preferences.PreferencesDataSource
 import com.freetreechair.domain.disgust.model.UIDisgust
 import com.freetreechair.domain.disgust.repository.DisgustRepository
 import timber.log.Timber
 import javax.inject.Inject
 
 class DisgustRepositoryImpl @Inject constructor(
+    private val preferencesDataSource: PreferencesDataSource,
     private val remoteDisgustDataSource: RemoteDisgustDataSource,
     private val apiDisgustMapper: ApiDisgustMapper
 ) : DisgustRepository {
@@ -32,12 +34,7 @@ class DisgustRepositoryImpl @Inject constructor(
         }
         return Result.failure(IllegalStateException("NetworkError or UnKnownError please check timber"))
     }
-
-    override fun selectDisgusts(disgustId: Int) {
-        TODO("Not yet implemented")
-    }
-
-    override fun saveDisgusts(disgusts: List<Int>) {
-        TODO("Not yet implemented")
+    override fun saveDisgusts(disgusts: String) {
+        preferencesDataSource.saveDisgusts(disgusts)
     }
 }
