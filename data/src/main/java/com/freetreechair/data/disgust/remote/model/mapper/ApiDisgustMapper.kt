@@ -10,8 +10,8 @@ class ApiDisgustMapper @Inject constructor() : ApiMapper<ApiDisgustResponse?, UI
     override fun mapToDomain(apiEntity: ApiDisgustResponse?): UIDisgust {
         return UIDisgust(
             id = apiEntity?.id ?: -1,
-            name = apiEntity?.name.orEmpty(),
-            imageUrl = apiEntity?.imageUrl.orEmpty(),
+            name = apiEntity?.food.orEmpty(),
+            imageUrl = apiEntity?.imgUrl.orEmpty(),
             isChecked = false
         )
     }

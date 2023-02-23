@@ -9,6 +9,6 @@ import retrofit2.http.Query
 interface DisgustService {
     @GET("v1/dislikes")
     suspend fun getDisgusts(
-        @Query("query") query: String? = null
+        @Query(value = "query") query: String? = null
     ): NetworkState<BaseResponse<List<ApiDisgustResponse?>>>
 }
