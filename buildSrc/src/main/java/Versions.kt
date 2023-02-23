@@ -31,7 +31,7 @@ object Versions {
     const val firebaseBomVersion = "29.3.0"
     const val firebaseMessagingVersion = "22.0.0"
     const val viewPagerIndicatorVersion = "4.1.2"
-    const val glideVersion = "4.13.0"
+    const val glideVersion = "4.14.2"
     const val retrofitVersion = "2.9.0"
     const val okHttpVersion = "4.9.3"
     const val coilVersion = "1.4.0"
