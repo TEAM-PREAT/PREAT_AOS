@@ -22,6 +22,10 @@ class PreferencesDataSourceImpl @Inject constructor(
         edit { putString(PREAT_USER_DISGUSTS, disgusts) }
     }
 
+    override fun saveTastes(tastes: String) {
+        edit { putString(PREAT_USER_TASTES, tastes) }
+    }
+
     private inline fun edit(block: SharedPreferences.Editor.() -> Unit) {
         with(preferences.edit()) {
             block()
@@ -34,5 +38,6 @@ class PreferencesDataSourceImpl @Inject constructor(
         const val EMPTY_ACCESS_TOKEN = ""
         const val PREAT_USER_NICKNAME = "PREAT_USER_NICKNAME"
         const val PREAT_USER_DISGUSTS = "PREAT_USER_DISGUSTS"
+        const val PREAT_USER_TASTES = "PREAT_USER_TASTES"
     }
 }

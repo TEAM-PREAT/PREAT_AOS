@@ -5,4 +5,5 @@ interface PreferencesDataSource {
     fun saveAccessToken(accessToken: String)
     fun saveNickname(nickname: String)
     fun saveDisgusts(disgusts: String)
+    fun saveTastes(tastes: String)
 }
