@@ -9,6 +9,6 @@ import retrofit2.http.Query
 interface NicknameService {
     @GET("v1/auth/nickname/check")
     suspend fun getNicknameCheck(
-        @Query("nickname") nickname: String
+        @Query(value = "nickname") nickname: String
     ): NetworkState<BaseResponse<ApiNicknameResponse?>>
 }
