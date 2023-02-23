@@ -7,6 +7,9 @@ import androidx.appcompat.widget.AppCompatEditText
 import androidx.appcompat.widget.AppCompatImageView
 import com.freetreechair.common.R
 import androidx.databinding.BindingAdapter
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import com.freetreechair.common.extension.getString
 import com.freetreechair.sign_up.nickname.NicknameState
 import com.freetreechair.sign_up.nickname.NicknameState.OVER_TEXT_LIMIT
@@ -112,4 +115,15 @@ fun AppCompatImageView.updateAppearance(nicknameState: NicknameState?) {
     }
 }
 
-
+@BindingAdapter("setImageSourceToCircle")
+fun AppCompatImageView.setImageSourceToCircle(imageUrl: String?) {
+    imageUrl?.let { url ->
+        Glide.with(this.context)
+            .load(url)
+            .placeholder(R.color.gray_20)
+            .error(R.color.gray_20)
+            .diskCacheStrategy(DiskCacheStrategy.NONE)
+            .apply(RequestOptions().circleCrop())
+            .into(this)
+    }
+}
