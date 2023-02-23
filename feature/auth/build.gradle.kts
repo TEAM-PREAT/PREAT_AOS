@@ -11,10 +11,14 @@ plugins {
     kotlin("kapt")
 }
 
+@Suppress("UnstableApiUsage")
 android {
-    @Suppress("UnstableApiUsage")
     buildFeatures {
         dataBinding = true
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.composeCompilerVersion
     }
     defaultConfig {
         buildConfigField(
@@ -49,8 +53,14 @@ dependencies {
     implementation(AndroidXDependencies.coroutines)
     implementation(AndroidXDependencies.splashScreen)
 
+    // Jetpack Compose
+    implementation(ComposeDependency.composeUi)
+    implementation(ComposeDependency.composeMaterial)
+    implementation(ComposeDependency.composeUiTool)
+
     // ThirdParty Library
     implementation(ThirdPartyDependencies.lottie)
+    implementation(ThirdPartyDependencies.lottieCompose)
 
     // Material Design
     implementation(MaterialDesignDependencies.materialDesign)

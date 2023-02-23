@@ -17,25 +17,27 @@ plugins {
 android {
     buildFeatures {
         dataBinding = true
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.composeCompilerVersion
     }
     defaultConfig {
         buildConfigField(
-                "String",
-                "PREAT_SERVER_BASE_URL_DEBUG",
-                properties.getProperty("PREAT_SERVER_BASE_URL_DEBUG")
+            "String",
+            "PREAT_SERVER_BASE_URL_DEBUG",
+            properties.getProperty("PREAT_SERVER_BASE_URL_DEBUG")
         )
         buildConfigField(
-                "String",
-                "PREAT_SERVER_BASE_URL_RELEASE",
-                properties.getProperty("PREAT_SERVER_BASE_URL_RELEASE")
+            "String",
+            "PREAT_SERVER_BASE_URL_RELEASE",
+            properties.getProperty("PREAT_SERVER_BASE_URL_RELEASE")
         )
         buildConfigField(
-                "String",
-                "KAKAO_NATIVE_APP_KEY",
-                properties.getProperty("KAKAO_NATIVE_APP_KEY")
+            "String", "KAKAO_NATIVE_APP_KEY", properties.getProperty("KAKAO_NATIVE_APP_KEY")
         )
         manifestPlaceholders["NATIVE_APP_KEY"] =
-                properties.getProperty("KAKAO_NATIVE_APP_KEY_NO_QUOTES")
+            properties.getProperty("KAKAO_NATIVE_APP_KEY_NO_QUOTES")
     }
     buildTypes {
         getByName("release") {
@@ -43,8 +45,8 @@ android {
             isShrinkResources = true
 
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
         }
     }
@@ -96,11 +98,17 @@ dependencies {
     implementation(AndroidXDependencies.lifecycleJava8)
     implementation(AndroidXDependencies.viewModel)
 
+    // Jetpack Compose
+    implementation(ComposeDependency.composeUi)
+    implementation(ComposeDependency.composeMaterial)
+    implementation(ComposeDependency.composeUiTool)
+
     // ImageLoading Library
     // Glide for general
     // Coil for compose
     implementation(ThirdPartyDependencies.coil)
     implementation(ThirdPartyDependencies.glide)
+    implementation(ThirdPartyDependencies.lottieCompose)
 
     // Http Client Library
     implementation(ThirdPartyDependencies.retrofit)

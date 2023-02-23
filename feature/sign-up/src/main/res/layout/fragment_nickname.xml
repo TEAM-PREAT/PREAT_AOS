@@ -59,7 +59,7 @@
             android:textAppearance="@style/title_3B"
             android:textColor="@color/black"
             android:textColorHint="@color/gray_40"
-            android:textCursorDrawable="@drawable/shape_cursor_orange"
+            android:textCursorDrawable="@drawable/shape_cursor_orange_2_dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_nickname"

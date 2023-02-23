@@ -12,10 +12,14 @@ plugins {
     id("androidx.navigation.safeargs")
 }
 
+@Suppress("UnstableApiUsage")
 android {
-    @Suppress("UnstableApiUsage")
     buildFeatures {
         dataBinding = true
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.2"
     }
     namespace = "com.freetreechair.sign_up"
 }
@@ -47,6 +51,11 @@ dependencies {
     // Jetpack Fragment
     implementation(AndroidXDependencies.fragment)
 
+    // Jetpack Compose
+    implementation(ComposeDependency.composeUi)
+    implementation(ComposeDependency.composeMaterial)
+    implementation(ComposeDependency.composeUiTool)
+
     // Logger - Timber
     implementation(ThirdPartyDependencies.timber)
 
@@ -62,4 +71,5 @@ dependencies {
 
     // Third Party Library
     implementation(ThirdPartyDependencies.lottie)
+    implementation(ThirdPartyDependencies.lottieCompose)
 }

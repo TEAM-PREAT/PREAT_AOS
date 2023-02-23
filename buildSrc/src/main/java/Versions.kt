@@ -31,7 +31,7 @@ object Versions {
     const val firebaseBomVersion = "29.3.0"
     const val firebaseMessagingVersion = "22.0.0"
     const val viewPagerIndicatorVersion = "4.1.2"
-    const val glideVersion = "4.13.0"
+    const val glideVersion = "4.14.2"
     const val retrofitVersion = "2.9.0"
     const val okHttpVersion = "4.9.3"
     const val coilVersion = "1.4.0"
@@ -56,6 +56,10 @@ object Versions {
     const val amplifyVersion = "2.0.0"
     const val progressViewVersion = "1.1.3"
     const val workVersion = "2.7.1"
+
+    const val composeVersion = "1.3.1"
+    const val composeCompilerVersion = "1.4.2"
+    const val lottieComposeVersion = "6.0.0"
 
     val javaVersion = JavaVersion.VERSION_11
     const val jvmVersion = "11"

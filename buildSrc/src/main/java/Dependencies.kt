@@ -40,6 +40,7 @@ object TestDependencies {
     const val androidTest = "androidx.test.ext:junit-ktx:${Versions.androidTestVersion}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoVersion}"
     const val room = "androidx.room:room-testing:${Versions.roomVersion}"
+    const val composeTest = "androidx.compose.ui:ui-test-junit4:${Versions.composeVersion}"
 }
 
 object MaterialDesignDependencies {
@@ -85,6 +86,7 @@ object ThirdPartyDependencies {
     const val rxBinding = "com.jakewharton.rxbinding4:rxbinding:${Versions.rxBindingVersion}"
     const val rxKotlin = "io.reactivex.rxjava3:rxkotlin:${Versions.rxKotlinVersion}"
     const val progressView = "com.github.skydoves:progressview:${Versions.progressViewVersion}"
+    const val lottieCompose = "com.airbnb.android:lottie-compose:${Versions.lottieComposeVersion}"
 }
 
 object FirebaseDependency {
@@ -112,6 +114,12 @@ object ClassPathPlugins {
     const val appDistribution = "com.google.firebase:firebase-appdistribution-gradle:3.0.1"
 }
 
-object WorkManagerDependency{
-    const val runtimeKtx =  "androidx.work:work-runtime-ktx:${Versions.workVersion}"
+object WorkManagerDependency {
+    const val runtimeKtx = "androidx.work:work-runtime-ktx:${Versions.workVersion}"
+}
+
+object ComposeDependency {
+    const val composeUi = "androidx.compose.ui:ui:${Versions.composeVersion}"
+    const val composeMaterial = "androidx.compose.material:material:${Versions.composeVersion}"
+    const val composeUiTool = "androidx.compose.ui:ui-tooling-preview:${Versions.composeVersion}"
 }

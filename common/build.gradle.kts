@@ -5,10 +5,14 @@ plugins {
     kotlin("kapt")
 }
 
+@Suppress("UnstableApiUsage")
 android {
-    @Suppress("UnstableApiUsage")
     buildFeatures {
         dataBinding = true
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Versions.composeCompilerVersion
     }
     namespace = "com.freetreechair.common"
 }
@@ -27,12 +31,18 @@ dependencies {
     implementation(AndroidXDependencies.splashScreen)
     coreLibraryDesugaring(AndroidXDependencies.desugarLibrary)
 
+    // Jetpack Compose
+    implementation(ComposeDependency.composeUi)
+    implementation(ComposeDependency.composeMaterial)
+    implementation(ComposeDependency.composeUiTool)
+
     // Dagger-Hilt
     implementation(AndroidXDependencies.hilt)
     kapt(KaptDependencies.hiltCompiler)
 
     // ThirdParty Library
     implementation(ThirdPartyDependencies.lottie)
+    implementation(ThirdPartyDependencies.lottieCompose)
 
     // Material Design
     implementation(MaterialDesignDependencies.materialDesign)
@@ -49,4 +59,8 @@ dependencies {
 
     // Timber
     implementation(ThirdPartyDependencies.timber)
+
+    // Testing
+    implementation(TestDependencies.jUnit)
+    implementation(TestDependencies.androidTest)
 }

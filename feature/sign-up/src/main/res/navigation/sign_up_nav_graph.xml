@@ -28,6 +28,19 @@
             android:name="nickname"
             app:argType="string"
             app:nullable="false" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_disgustFragment"
+            app:destination="@id/disgustFragment"
+            app:enterAnim="@anim/view_fade_in"
+            app:exitAnim="@anim/view_fade_out"
+            app:popEnterAnim="@anim/view_fade_in"
+            app:popExitAnim="@anim/view_fade_out" />
     </fragment>
+
+    <fragment
+        android:id="@+id/disgustFragment"
+        android:name="com.freetreechair.sign_up.disgust.DisgustFragment"
+        android:label="DisgustFragment"
+        tools:layout="@layout/fragment_disgust" />
 
 </navigation>

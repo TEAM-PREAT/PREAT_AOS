@@ -5,10 +5,12 @@ import android.animation.ValueAnimator
 import android.os.Bundle
 import android.view.View
 import android.view.animation.LinearInterpolator
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.freetreechair.common.base.BindingFragment
 import com.freetreechair.sign_up.R
 import com.freetreechair.sign_up.databinding.FragmentWelcomeBinding
+import com.freetreechair.sign_up.nickname.NicknameFragmentDirections
 
 class WelcomeFragment : BindingFragment<FragmentWelcomeBinding>(R.layout.fragment_welcome) {
     private val args: WelcomeFragmentArgs by navArgs()
@@ -16,6 +18,7 @@ class WelcomeFragment : BindingFragment<FragmentWelcomeBinding>(R.layout.fragmen
         super.onViewCreated(view, savedInstanceState)
         binding.tvNickname.text = args.nickname
         setAnimationOnCard()
+        initButtonClickListener()
     }
 
     private fun setAnimationOnCard() {
@@ -25,6 +28,14 @@ class WelcomeFragment : BindingFragment<FragmentWelcomeBinding>(R.layout.fragmen
             repeatCount = ValueAnimator.INFINITE
             duration = DURATION_TIME
             start()
+        }
+    }
+
+    private fun initButtonClickListener() {
+        binding.btnNext.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_welcomeFragment_to_disgustFragment
+            )
         }
     }
 

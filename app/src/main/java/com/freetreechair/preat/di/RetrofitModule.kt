@@ -2,7 +2,9 @@ package com.freetreechair.preat.di
 
 import com.freetreechair.data.adapter.CustomCallAdapterFactory
 import com.freetreechair.data.preferences.PreferencesDataSource
-import com.freetreechair.preat.BuildConfig.*
+import com.freetreechair.preat.BuildConfig.DEBUG
+import com.freetreechair.preat.BuildConfig.PREAT_SERVER_BASE_URL_DEBUG
+import com.freetreechair.preat.BuildConfig.PREAT_SERVER_BASE_URL_RELEASE
 import com.freetreechair.preat.annotations.PreatServer
 import com.freetreechair.preat.interceptor.LoggingInterceptor
 import com.freetreechair.preat.interceptor.NetworkStatusInterceptor
@@ -35,11 +37,15 @@ object RetrofitModule {
      */
     private val nullOnEmptyConverterFactory = object : Converter.Factory() {
         fun converterFactory() = this
-        override fun responseBodyConverter(type: Type, annotations: Array<out Annotation>, retrofit: Retrofit) = object :
-            Converter<ResponseBody, Any?> {
-            val nextResponseBodyConverter = retrofit.nextResponseBodyConverter<Any?>(converterFactory(), type, annotations)
-            override fun convert(value: ResponseBody) = if (value.contentLength() != 0L) nextResponseBodyConverter.convert(value) else null
-        }
+        override fun responseBodyConverter(type: Type, annotations: Array<out Annotation>, retrofit: Retrofit) =
+            object :
+                Converter<ResponseBody, Any?> {
+                val nextResponseBodyConverter =
+                    retrofit.nextResponseBodyConverter<Any?>(converterFactory(), type, annotations)
+
+                override fun convert(value: ResponseBody) =
+                    if (value.contentLength() != 0L) nextResponseBodyConverter.convert(value) else null
+            }
     }
 
     @Provides
