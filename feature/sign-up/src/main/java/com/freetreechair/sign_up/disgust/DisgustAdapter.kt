@@ -4,12 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.freetreechair.common.extension.setOnSingleClickListener
 import com.freetreechair.common.util.ItemDiffCallback
 import com.freetreechair.domain.disgust.model.UIDisgust
 import com.freetreechair.sign_up.databinding.ItemDisgustBinding
 
 class DisgustAdapter(
-    private val onClick: (Int) -> Unit
+    private val onDisgustClick: (Int) -> Unit
 ) : ListAdapter<UIDisgust, DisgustAdapter.DisgustViewHolder>(
     ItemDiffCallback<UIDisgust>(
         onContentsTheSame = { oldItem, newItem -> oldItem == newItem },
@@ -27,18 +28,16 @@ class DisgustAdapter(
     }
 
     override fun onBindViewHolder(holder: DisgustViewHolder, position: Int) {
-        holder.onBind(getItem(position), onClick)
+        holder.onBind(getItem(position))
     }
 
     inner class DisgustViewHolder(private val binding: ItemDisgustBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(
-            disgust: UIDisgust,
-            onClick: (Int) -> Unit,
-        ) {
+        fun onBind(disgust: UIDisgust) {
             binding.disgust = disgust
-            binding.root.setOnClickListener {
-                onClick(disgust.id)
+            binding.root.setOnSingleClickListener {
+                onDisgustClick(disgust.id)
+                notifyItemChanged(adapterPosition)
             }
         }
     }
