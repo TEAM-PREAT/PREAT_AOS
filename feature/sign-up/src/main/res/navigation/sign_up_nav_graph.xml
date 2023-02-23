@@ -41,6 +41,20 @@
         android:id="@+id/disgustFragment"
         android:name="com.freetreechair.sign_up.disgust.DisgustFragment"
         android:label="DisgustFragment"
-        tools:layout="@layout/fragment_disgust" />
+        tools:layout="@layout/fragment_disgust">
+        <action
+            android:id="@+id/action_disgustFragment_to_tasteFragment"
+            app:destination="@id/tasteFragment"
+            app:enterAnim="@anim/view_fade_in"
+            app:exitAnim="@anim/view_fade_out"
+            app:popEnterAnim="@anim/view_fade_in"
+            app:popExitAnim="@anim/view_fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tasteFragment"
+        android:name="com.freetreechair.sign_up.taste.TasteFragment"
+        android:label="TasteFragment"
+        tools:layout="@layout/fragment_taste" />
 
 </navigation>
