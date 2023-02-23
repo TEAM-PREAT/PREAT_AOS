@@ -23,4 +23,9 @@
     <string name="let_me_know_disgusts">싫어하는 음식을 알려주세요!</string>
     <string name="search_disgusts">싫어하는 음식을 검색해주세요.</string>
 
+    <!-- Taste -->
+    <string name="let_me_know_taste">입맛을 알려주세요!</string>
+    <string name="spicy">맵기</string>
+    <string name="sugar">당도</string>
+
 </resources>
