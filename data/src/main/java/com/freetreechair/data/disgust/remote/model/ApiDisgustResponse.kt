@@ -7,5 +7,5 @@ import com.squareup.moshi.JsonClass
 data class ApiDisgustResponse(
     @field:Json(name = "id") val id: Int?,
     @field:Json(name = "food") val food: String?,
-    @field:Json(name = "imgUrl") val imgUrl: String?
+    @field:Json(name = "imageUrl") val imageUrl: String?
 )
