@@ -10,8 +10,9 @@ import androidx.navigation.fragment.navArgs
 import com.freetreechair.common.base.BindingFragment
 import com.freetreechair.sign_up.R
 import com.freetreechair.sign_up.databinding.FragmentWelcomeBinding
-import com.freetreechair.sign_up.nickname.NicknameFragmentDirections
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class WelcomeFragment : BindingFragment<FragmentWelcomeBinding>(R.layout.fragment_welcome) {
     private val args: WelcomeFragmentArgs by navArgs()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
