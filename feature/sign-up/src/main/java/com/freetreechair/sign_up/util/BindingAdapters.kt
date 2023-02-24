@@ -9,6 +9,7 @@ import com.freetreechair.common.R
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.freetreechair.common.extension.getString
 import com.freetreechair.sign_up.nickname.NicknameState
@@ -120,10 +121,23 @@ fun AppCompatImageView.setImageSourceToCircle(imageUrl: String?) {
     imageUrl?.let { url ->
         Glide.with(this.context)
             .load(url)
-            .placeholder(R.color.gray_20)
-            .error(R.color.gray_20)
+            .placeholder(R.drawable.img_placeholder)
+            .error(R.drawable.img_placeholder)
             .diskCacheStrategy(DiskCacheStrategy.NONE)
             .apply(RequestOptions().circleCrop())
+            .into(this)
+    }
+}
+
+@BindingAdapter("setImageSourceToRoundRectangle")
+fun AppCompatImageView.setImageSourceToRoundRectangle(imageUrl: String?) {
+    imageUrl?.let { url ->
+        Glide.with(this.context)
+            .load(url)
+            .placeholder(R.drawable.img_placeholder)
+            .error(R.drawable.img_placeholder)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .apply(RequestOptions().centerCrop())
             .into(this)
     }
 }
