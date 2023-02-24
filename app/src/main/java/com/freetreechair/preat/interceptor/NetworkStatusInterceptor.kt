@@ -1,7 +1,7 @@
 package com.freetreechair.preat.interceptor
 
 import com.freetreechair.common.util.ConnectionManager
-import com.freetreechair.data.exception.NetworkUnavailableException
+import com.freetreechair.data.util.exception.NetworkUnavailableException
 import okhttp3.Interceptor
 import okhttp3.Response
 import javax.inject.Inject
