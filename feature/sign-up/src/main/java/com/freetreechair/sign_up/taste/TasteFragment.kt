@@ -17,6 +17,7 @@ class TasteFragment : BindingFragment<FragmentTasteBinding>(R.layout.fragment_ta
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.vm = tasteViewModel
+        setStatusBarColorWhite()
         observeSlider()
         initButtonClickListener()
     }

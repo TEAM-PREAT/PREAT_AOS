@@ -1,7 +1,7 @@
 package com.freetreechair.preat.di
 
-import com.freetreechair.data.preferences.PreferencesDataSource
-import com.freetreechair.data.preferences.PreferencesDataSourceImpl
+import com.freetreechair.data.util.preferences.PreferencesDataSource
+import com.freetreechair.data.util.preferences.PreferencesDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

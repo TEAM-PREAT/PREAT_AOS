@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.freetreechair.common.base.BaseViewModel
-import com.freetreechair.domain.nickname.usecase.CheckIsNicknameDuplicatedUseCase
-import com.freetreechair.domain.nickname.usecase.NicknameUseCases
+import com.freetreechair.domain.signup.nickname.usecase.CheckIsNicknameDuplicatedUseCase
+import com.freetreechair.domain.signup.nickname.usecase.NicknameUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import timber.log.Timber

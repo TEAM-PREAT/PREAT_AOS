@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.freetreechair.common.util.ItemDiffCallback
-import com.freetreechair.domain.evaluate.model.UIRestaurant
+import com.freetreechair.domain.signup.evaluate.model.UIRestaurant
 import com.freetreechair.sign_up.databinding.ItemRestaurantBinding
 
 class EvaluateAdapter(

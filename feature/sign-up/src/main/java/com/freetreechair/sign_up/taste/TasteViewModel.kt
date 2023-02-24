@@ -3,7 +3,7 @@ package com.freetreechair.sign_up.taste
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.freetreechair.domain.taste.usecase.TasteUseCases
+import com.freetreechair.domain.signup.taste.usecase.TasteUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

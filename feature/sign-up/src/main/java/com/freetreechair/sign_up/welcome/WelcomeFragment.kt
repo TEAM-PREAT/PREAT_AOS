@@ -18,6 +18,7 @@ class WelcomeFragment : BindingFragment<FragmentWelcomeBinding>(R.layout.fragmen
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.tvNickname.text = args.nickname
+        setStatusBarColorWhite()
         setAnimationOnCard()
         initButtonClickListener()
     }

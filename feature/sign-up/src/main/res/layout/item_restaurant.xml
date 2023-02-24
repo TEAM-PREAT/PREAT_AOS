@@ -9,7 +9,7 @@
 
         <variable
             name="restaurant"
-            type="com.freetreechair.domain.evaluate.model.UIRestaurant" />
+            type="com.freetreechair.domain.signup.evaluate.model.UIRestaurant" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

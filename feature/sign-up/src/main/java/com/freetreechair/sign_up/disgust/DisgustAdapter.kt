@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.freetreechair.common.extension.setOnSingleClickListener
 import com.freetreechair.common.util.ItemDiffCallback
-import com.freetreechair.domain.disgust.model.UIDisgust
+import com.freetreechair.domain.signup.disgust.model.UIDisgust
 import com.freetreechair.sign_up.databinding.ItemDisgustBinding
 
 class DisgustAdapter(

@@ -1,7 +1,6 @@
 package com.freetreechair.auth.login
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.activityViewModels
 import com.freetreechair.auth.util.KakaoLoginManager

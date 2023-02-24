@@ -7,8 +7,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.freetreechair.common.base.BaseViewModel
 import com.freetreechair.common.util.UiState
-import com.freetreechair.domain.disgust.model.UIDisgust
-import com.freetreechair.domain.disgust.usecase.DisgustUseCases
+import com.freetreechair.domain.signup.disgust.model.UIDisgust
+import com.freetreechair.domain.signup.disgust.usecase.DisgustUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
