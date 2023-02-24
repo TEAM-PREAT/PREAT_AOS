@@ -69,6 +69,20 @@
         android:id="@+id/evaluateFragment"
         android:name="com.freetreechair.sign_up.evaluate.EvaluateFragment"
         android:label="EvaluateFragment"
-        tools:layout="@layout/fragment_evaluate" />
+        tools:layout="@layout/fragment_evaluate">
+        <action
+            android:id="@+id/action_evaluateFragment_to_completeFragment"
+            app:destination="@id/completeFragment"
+            app:enterAnim="@anim/view_fade_in"
+            app:exitAnim="@anim/view_fade_out"
+            app:popEnterAnim="@anim/view_fade_in"
+            app:popExitAnim="@anim/view_fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/completeFragment"
+        android:name="com.freetreechair.sign_up.complete.CompleteFragment"
+        android:label="CompleteFragment"
+        tools:layout="@layout/fragment_complete" />
 
 </navigation>

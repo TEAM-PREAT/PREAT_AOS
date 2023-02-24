@@ -8,7 +8,9 @@ import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.freetreechair.common.base.BindingFragment
+import com.freetreechair.common.extension.setOnSingleClickListener
 import com.freetreechair.common.extension.setQueryDebounce
 import com.freetreechair.common.extension.shortToast
 import com.freetreechair.common.ui.component.PreatProgressBar
@@ -42,6 +44,7 @@ class EvaluateFragment : BindingFragment<FragmentEvaluateBinding>(R.layout.fragm
         setupUI()
         observeRestaurants()
         updateRestaurantsAsInputQuery()
+        initButtonClickListener()
     }
 
     private fun setupUI() {
@@ -81,5 +84,18 @@ class EvaluateFragment : BindingFragment<FragmentEvaluateBinding>(R.layout.fragm
 
     private fun onEvaluate(restaurantId: Int, rating: Float) {
         evaluateViewModel.updateRestaurants(restaurantId, rating)
+    }
+
+    private fun initButtonClickListener() {
+        with(binding) {
+            btnOk.setOnClickListener {
+                evaluateViewModel.saveEvaluates()
+                findNavController().navigate(R.id.action_evaluateFragment_to_completeFragment)
+            }
+            btnDelete.setOnSingleClickListener {
+                etSearch.text = null
+                etSearch.clearFocus()
+            }
+        }
     }
 }
