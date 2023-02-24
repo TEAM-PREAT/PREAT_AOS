@@ -74,12 +74,11 @@ class DisgustViewModel @Inject constructor(
         isButtonClickable.value = state.any { it.isChecked }
     }
 
-    fun saveDisgusts(): String {
+    fun saveDisgusts() {
         val stringBuilder = StringBuilder()
         state.forEach { uiDisgust ->
             if (uiDisgust.isChecked) stringBuilder.append("${uiDisgust.id},")
         }
         disgustUseCases.saveDisgustUseCase(stringBuilder.toString())
-        return stringBuilder.toString()
     }
 }

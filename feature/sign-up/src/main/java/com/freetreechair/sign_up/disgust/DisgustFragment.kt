@@ -13,10 +13,12 @@ import com.freetreechair.common.extension.shortToast
 import com.freetreechair.common.util.UiState
 import com.freetreechair.sign_up.R
 import com.freetreechair.sign_up.databinding.FragmentDisgustBinding
+import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.rxjava3.disposables.Disposable
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
+@AndroidEntryPoint
 class DisgustFragment : BindingFragment<FragmentDisgustBinding>(R.layout.fragment_disgust) {
     private val disgustAdapter = DisgustAdapter(::onDisgustClick)
     private val disgustViewModel: DisgustViewModel by activityViewModels()
