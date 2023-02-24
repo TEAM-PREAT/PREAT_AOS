@@ -4,6 +4,10 @@ import com.freetreechair.domain.disgust.repository.DisgustRepository
 import com.freetreechair.domain.disgust.usecase.DisgustUseCases
 import com.freetreechair.domain.disgust.usecase.FetchDisgustUseCase
 import com.freetreechair.domain.disgust.usecase.SaveDisgustUseCase
+import com.freetreechair.domain.evaluate.repository.EvaluateRepository
+import com.freetreechair.domain.evaluate.usecase.EvaluateUseCases
+import com.freetreechair.domain.evaluate.usecase.FetchRestaurantUseCase
+import com.freetreechair.domain.evaluate.usecase.SaveEvaluateUseCase
 import com.freetreechair.domain.login.repository.LoginRepository
 import com.freetreechair.domain.login.usecase.GetAccessTokenUseCase
 import com.freetreechair.domain.login.usecase.LoginUseCases
@@ -58,6 +62,15 @@ object UseCaseModule {
     fun providesTasteUseCase(repository: TasteRepository): TasteUseCases {
         return TasteUseCases(
             saveTasteUseCase = SaveTasteUseCase(repository)
+        )
+    }
+
+    @ViewModelScoped
+    @Provides
+    fun providesEvaluateUseCase(repository: EvaluateRepository): EvaluateUseCases {
+        return EvaluateUseCases(
+            fetchRestaurantUseCase = FetchRestaurantUseCase(repository),
+            saveEvaluateUseCase = SaveEvaluateUseCase(repository)
         )
     }
 }

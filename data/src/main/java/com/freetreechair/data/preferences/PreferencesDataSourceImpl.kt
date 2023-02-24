@@ -26,6 +26,10 @@ class PreferencesDataSourceImpl @Inject constructor(
         edit { putString(PREAT_USER_TASTES, tastes) }
     }
 
+    override fun saveEvaluates(evaluates: String) {
+        edit { putString(PREAT_USER_EVALUATES, evaluates) }
+    }
+
     private inline fun edit(block: SharedPreferences.Editor.() -> Unit) {
         with(preferences.edit()) {
             block()
@@ -39,5 +43,6 @@ class PreferencesDataSourceImpl @Inject constructor(
         const val PREAT_USER_NICKNAME = "PREAT_USER_NICKNAME"
         const val PREAT_USER_DISGUSTS = "PREAT_USER_DISGUSTS"
         const val PREAT_USER_TASTES = "PREAT_USER_TASTES"
+        const val PREAT_USER_EVALUATES = "PREAT_USER_EVALUATES"
     }
 }

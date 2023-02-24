@@ -39,4 +39,8 @@
     <string name="salt_freshman">거의 짜지 않은 맛</string>
     <string name="salt_senior">가장 짠 맛</string>
 
+    <!-- Evaluate -->
+    <string name="let_me_know_evaluation">방문했던 식당을 평가해주세요!</string>
+    <string name="search_resturants">방문했던 식당을 검색해주세요.</string>
+
 </resources>

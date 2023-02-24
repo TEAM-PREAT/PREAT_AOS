@@ -1,6 +1,7 @@
 package com.freetreechair.preat.di
 
 import com.freetreechair.data.disgust.remote.service.DisgustService
+import com.freetreechair.data.evaluate.remote.service.EvaluateService
 import com.freetreechair.data.login.remote.service.LoginService
 import com.freetreechair.data.nickname.remote.service.NicknameService
 import com.freetreechair.preat.annotations.PreatServer
@@ -18,12 +19,19 @@ object RetrofitServiceModule {
     @Singleton
     fun providesLoginService(@PreatServer retrofit: Retrofit): LoginService =
         retrofit.create(LoginService::class.java)
+
     @Provides
     @Singleton
     fun providesNicknameService(@PreatServer retrofit: Retrofit): NicknameService =
         retrofit.create(NicknameService::class.java)
+
     @Provides
     @Singleton
     fun providesDisgustService(@PreatServer retrofit: Retrofit): DisgustService =
         retrofit.create(DisgustService::class.java)
+
+    @Provides
+    @Singleton
+    fun providesEvaluateService(@PreatServer retrofit: Retrofit): EvaluateService =
+        retrofit.create(EvaluateService::class.java)
 }

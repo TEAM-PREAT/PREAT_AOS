@@ -8,7 +8,10 @@ import com.freetreechair.common.base.BindingFragment
 import com.freetreechair.common.extension.setOnSingleClickListener
 import com.freetreechair.sign_up.R
 import com.freetreechair.sign_up.databinding.FragmentTasteBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+
+@AndroidEntryPoint
 class TasteFragment : BindingFragment<FragmentTasteBinding>(R.layout.fragment_taste) {
     private val tasteViewModel: TasteViewModel by activityViewModels()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
