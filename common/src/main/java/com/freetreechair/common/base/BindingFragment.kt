@@ -1,14 +1,18 @@
 package com.freetreechair.common.base
 
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
+import androidx.core.content.ContextCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import com.freetreechair.common.R
 import com.freetreechair.common.util.EventObserver
 import com.freetreechair.common.util.Injector
 import com.freetreechair.navigator.MainNavigator
@@ -51,6 +55,32 @@ abstract class BindingFragment<T : ViewDataBinding>(
             sharedPreferences.edit().remove("PREAT_ACCESS_TOKEN").apply()
             requireActivity().finish()
         })
+    }
+
+    @Suppress("Deprecation")
+    fun setStatusBarColorOrange() {
+        requireActivity().window.apply {
+            statusBarColor = ContextCompat.getColor(requireActivity(), R.color.splash_orange)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                WindowInsetsControllerCompat(this, this@BindingFragment.requireView()).isAppearanceLightStatusBars =
+                    false
+            } else {
+                this.decorView.systemUiVisibility = 0
+            }
+        }
+    }
+
+    @Suppress("Deprecation")
+    fun setStatusBarColorWhite() {
+        requireActivity().window.apply {
+            statusBarColor = ContextCompat.getColor(requireActivity(), R.color.white)
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                WindowInsetsControllerCompat(this, this@BindingFragment.requireView()).isAppearanceLightStatusBars =
+                    true
+            } else {
+                this.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+            }
+        }
     }
 
     override fun onDestroyView() {
