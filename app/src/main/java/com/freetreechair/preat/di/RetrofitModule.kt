@@ -26,7 +26,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
     private const val AUTHORIZATION = "Authorization"
-    private const val BEARER ="Bearer "
+    private const val BEARER = "Bearer "
 
     /**
      * @author onseok
