@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="restaurant"
+            type="com.freetreechair.domain.evaluate.model.UIRestaurant" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingHorizontal="30dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_restaurant"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="@id/rb_restaurant"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:setImageSourceToRoundRectangle="@{restaurant.imageUrl}"
+            app:shapeAppearanceOverlay="@style/roundedCornersImageView"
+            tools:src="@drawable/img_dakbal" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{restaurant.name}"
+            android:textAppearance="@style/title_2B"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toStartOf="@id/tv_category"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/iv_restaurant"
+            app:layout_constraintTop_toTopOf="@id/iv_restaurant"
+            tools:text="산울림 1992" />
+
+        <TextView
+            android:id="@+id/tv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{restaurant.category}"
+            android:textAppearance="@style/caption_1"
+            android:textColor="@color/gray_50"
+            android:textSize="13sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/tv_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_name"
+            tools:text="육류, 고기" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{restaurant.address}"
+            android:textAppearance="@style/caption_1"
+            android:textColor="@color/gray_60"
+            android:textSize="13sp"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            tools:text="서울특별시 마포구 서강로9길 60" />
+
+        <RatingBar
+            android:id="@+id/rb_restaurant"
+            style="?android:attr/ratingBarStyleIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:isIndicator="false"
+            android:max="5"
+            android:numStars="5"
+            android:rating="@{restaurant.rating}"
+            android:scaleX="0.85"
+            android:scaleY="0.85"
+            android:stepSize="0.5"
+            android:theme="@style/PreatRatingBar"
+            android:transformPivotX="0dp"
+            app:layout_constraintStart_toStartOf="@id/tv_address"
+            app:layout_constraintTop_toBottomOf="@id/tv_address"
+            tools:rating="3.5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(restaurant.rating)}"
+            android:textAppearance="@style/subtitle_1"
+            android:textColor="@color/splash_orange"
+            android:textStyle="bold"
+            android:translationX="-5dp"
+            android:translationY="-1dp"
+            android:visibility="@{restaurant.isEvaluated ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@id/rb_restaurant"
+            app:layout_constraintStart_toEndOf="@id/rb_restaurant"
+            app:layout_constraintTop_toTopOf="@id/rb_restaurant"
+            tools:text="3.5" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/gray_30"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_restaurant" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
