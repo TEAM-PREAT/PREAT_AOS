@@ -33,6 +33,7 @@ class DisgustFragment : BindingFragment<FragmentDisgustBinding>(R.layout.fragmen
     }
 
     private fun setupUI() {
+        setStatusBarColorWhite()
         binding.rvDisgust.adapter = disgustAdapter
     }
 

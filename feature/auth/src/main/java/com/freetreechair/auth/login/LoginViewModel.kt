@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.freetreechair.common.base.BaseViewModel
 import com.freetreechair.common.util.Event
-import com.freetreechair.domain.login.model.DomainLoginRequest
-import com.freetreechair.domain.login.usecase.LoginUseCases
+import com.freetreechair.domain.auth.login.model.DomainLoginRequest
+import com.freetreechair.domain.auth.login.usecase.LoginUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -40,6 +40,7 @@ class LoginViewModel @Inject constructor(
                     platform = platform
                 )
             ).onSuccess {
+                loginUseCases.saveAccessTokenUseCase(it.accessToken)
                 if (it.isNewUser) {
                     _navigateToSignUp.postValue(Event(platform))
                 } else {

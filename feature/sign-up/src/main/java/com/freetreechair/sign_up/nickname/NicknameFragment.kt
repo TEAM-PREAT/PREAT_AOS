@@ -23,6 +23,7 @@ class NicknameFragment : BindingFragment<FragmentNicknameBinding>(R.layout.fragm
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.vm = nicknameViewModel
+        setStatusBarColorWhite()
         initEditTextFilter()
         initDuplicatedNicknameCheck()
         initNicknameStateUpdate()

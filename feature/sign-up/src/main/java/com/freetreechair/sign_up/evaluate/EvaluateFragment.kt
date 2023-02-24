@@ -48,6 +48,7 @@ class EvaluateFragment : BindingFragment<FragmentEvaluateBinding>(R.layout.fragm
     }
 
     private fun setupUI() {
+        setStatusBarColorWhite()
         with(binding.rvEvaluate) {
             adapter = evaluateAdapter
             itemAnimator = null

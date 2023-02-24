@@ -9,8 +9,8 @@ import androidx.lifecycle.viewModelScope
 import com.freetreechair.common.base.BaseViewModel
 import com.freetreechair.common.util.UiState
 import com.freetreechair.common.util.let2
-import com.freetreechair.domain.evaluate.model.UIRestaurant
-import com.freetreechair.domain.evaluate.usecase.EvaluateUseCases
+import com.freetreechair.domain.signup.evaluate.model.UIRestaurant
+import com.freetreechair.domain.signup.evaluate.usecase.EvaluateUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
