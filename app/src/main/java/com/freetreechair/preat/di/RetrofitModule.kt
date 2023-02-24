@@ -1,7 +1,7 @@
 package com.freetreechair.preat.di
 
-import com.freetreechair.data.adapter.CustomCallAdapterFactory
-import com.freetreechair.data.preferences.PreferencesDataSource
+import com.freetreechair.data.util.adapter.CustomCallAdapterFactory
+import com.freetreechair.data.util.preferences.PreferencesDataSource
 import com.freetreechair.preat.BuildConfig.DEBUG
 import com.freetreechair.preat.BuildConfig.PREAT_SERVER_BASE_URL_DEBUG
 import com.freetreechair.preat.BuildConfig.PREAT_SERVER_BASE_URL_RELEASE
@@ -26,6 +26,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
     private const val AUTHORIZATION = "Authorization"
+    private const val BEARER ="Bearer "
 
     /**
      * @author onseok
@@ -67,7 +68,7 @@ object RetrofitModule {
                         .newBuilder()
                         .addHeader(
                             AUTHORIZATION,
-                            preferencesDataSourceImpl.getAccessToken()
+                            BEARER + preferencesDataSourceImpl.getAccessToken()
                         )
                         .build()
                 )

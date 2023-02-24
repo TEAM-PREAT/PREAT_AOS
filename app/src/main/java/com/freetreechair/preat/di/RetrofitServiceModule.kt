@@ -1,9 +1,10 @@
 package com.freetreechair.preat.di
 
-import com.freetreechair.data.disgust.remote.service.DisgustService
-import com.freetreechair.data.evaluate.remote.service.EvaluateService
-import com.freetreechair.data.login.remote.service.LoginService
-import com.freetreechair.data.nickname.remote.service.NicknameService
+import com.freetreechair.data.signup.disgust.remote.service.DisgustService
+import com.freetreechair.data.signup.evaluate.remote.service.EvaluateService
+import com.freetreechair.data.auth.login.remote.service.LoginService
+import com.freetreechair.data.signup.complete.remote.service.CompleteService
+import com.freetreechair.data.signup.nickname.remote.service.NicknameService
 import com.freetreechair.preat.annotations.PreatServer
 import dagger.Module
 import dagger.Provides
@@ -34,4 +35,9 @@ object RetrofitServiceModule {
     @Singleton
     fun providesEvaluateService(@PreatServer retrofit: Retrofit): EvaluateService =
         retrofit.create(EvaluateService::class.java)
+
+    @Provides
+    @Singleton
+    fun providesCompleteService(@PreatServer retrofit: Retrofit): CompleteService =
+        retrofit.create(CompleteService::class.java)
 }

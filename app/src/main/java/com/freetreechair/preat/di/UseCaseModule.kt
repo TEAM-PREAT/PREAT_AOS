@@ -1,25 +1,29 @@
 package com.freetreechair.preat.di
 
-import com.freetreechair.domain.disgust.repository.DisgustRepository
-import com.freetreechair.domain.disgust.usecase.DisgustUseCases
-import com.freetreechair.domain.disgust.usecase.FetchDisgustUseCase
-import com.freetreechair.domain.disgust.usecase.SaveDisgustUseCase
-import com.freetreechair.domain.evaluate.repository.EvaluateRepository
-import com.freetreechair.domain.evaluate.usecase.EvaluateUseCases
-import com.freetreechair.domain.evaluate.usecase.FetchRestaurantUseCase
-import com.freetreechair.domain.evaluate.usecase.SaveEvaluateUseCase
-import com.freetreechair.domain.login.repository.LoginRepository
-import com.freetreechair.domain.login.usecase.GetAccessTokenUseCase
-import com.freetreechair.domain.login.usecase.LoginUseCases
-import com.freetreechair.domain.login.usecase.MakeLoginRequestUseCase
-import com.freetreechair.domain.login.usecase.SaveAccessTokenUseCase
-import com.freetreechair.domain.nickname.repository.NicknameRepository
-import com.freetreechair.domain.nickname.usecase.CheckIsNicknameDuplicatedUseCase
-import com.freetreechair.domain.nickname.usecase.NicknameUseCases
-import com.freetreechair.domain.nickname.usecase.SaveNicknameUseCase
-import com.freetreechair.domain.taste.repository.TasteRepository
-import com.freetreechair.domain.taste.usecase.SaveTasteUseCase
-import com.freetreechair.domain.taste.usecase.TasteUseCases
+import com.freetreechair.domain.signup.disgust.repository.DisgustRepository
+import com.freetreechair.domain.signup.disgust.usecase.DisgustUseCases
+import com.freetreechair.domain.signup.disgust.usecase.FetchDisgustUseCase
+import com.freetreechair.domain.signup.disgust.usecase.SaveDisgustUseCase
+import com.freetreechair.domain.signup.evaluate.repository.EvaluateRepository
+import com.freetreechair.domain.signup.evaluate.usecase.EvaluateUseCases
+import com.freetreechair.domain.signup.evaluate.usecase.FetchRestaurantUseCase
+import com.freetreechair.domain.signup.evaluate.usecase.SaveEvaluateUseCase
+import com.freetreechair.domain.auth.login.repository.LoginRepository
+import com.freetreechair.domain.auth.login.usecase.GetAccessTokenUseCase
+import com.freetreechair.domain.auth.login.usecase.LoginUseCases
+import com.freetreechair.domain.auth.login.usecase.MakeLoginRequestUseCase
+import com.freetreechair.domain.auth.login.usecase.SaveAccessTokenUseCase
+import com.freetreechair.domain.signup.complete.repository.CompleteRepository
+import com.freetreechair.domain.signup.complete.usecase.CompleteUseCases
+import com.freetreechair.domain.signup.complete.usecase.GetUserIdentificationUseCase
+import com.freetreechair.domain.signup.complete.usecase.MakeSignUpRequestUseCase
+import com.freetreechair.domain.signup.nickname.repository.NicknameRepository
+import com.freetreechair.domain.signup.nickname.usecase.CheckIsNicknameDuplicatedUseCase
+import com.freetreechair.domain.signup.nickname.usecase.NicknameUseCases
+import com.freetreechair.domain.signup.nickname.usecase.SaveNicknameUseCase
+import com.freetreechair.domain.signup.taste.repository.TasteRepository
+import com.freetreechair.domain.signup.taste.usecase.SaveTasteUseCase
+import com.freetreechair.domain.signup.taste.usecase.TasteUseCases
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -71,6 +75,15 @@ object UseCaseModule {
         return EvaluateUseCases(
             fetchRestaurantUseCase = FetchRestaurantUseCase(repository),
             saveEvaluateUseCase = SaveEvaluateUseCase(repository)
+        )
+    }
+
+    @ViewModelScoped
+    @Provides
+    fun providesCompleteUseCase(repository: CompleteRepository): CompleteUseCases {
+        return CompleteUseCases(
+            getUserIdentificationUseCase = GetUserIdentificationUseCase(repository),
+            makeSignUpRequestUseCase = MakeSignUpRequestUseCase(repository)
         )
     }
 }
