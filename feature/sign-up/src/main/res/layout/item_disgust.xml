@@ -10,7 +10,7 @@
 
         <variable
             name="disgust"
-            type="com.freetreechair.domain.disgust.model.UIDisgust" />
+            type="com.freetreechair.domain.signup.disgust.model.UIDisgust" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
