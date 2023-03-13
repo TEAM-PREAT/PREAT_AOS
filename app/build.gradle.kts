@@ -24,6 +24,17 @@ android {
     }
     defaultConfig {
         buildConfigField(
+            "String", "KAKAO_NATIVE_APP_KEY", properties.getProperty("KAKAO_NATIVE_APP_KEY")
+        )
+        manifestPlaceholders["NATIVE_APP_KEY"] =
+            properties.getProperty("KAKAO_NATIVE_APP_KEY_NO_QUOTES")
+        buildConfigField("String", "NAVER_CLIENT_ID", properties.getProperty("NAVER_CLIENT_ID"))
+        buildConfigField(
+            "String",
+            "NAVER_CLIENT_SECRET",
+            properties.getProperty("NAVER_CLIENT_SECRET")
+        )
+        buildConfigField(
             "String",
             "PREAT_SERVER_BASE_URL_DEBUG",
             properties.getProperty("PREAT_SERVER_BASE_URL_DEBUG")
@@ -33,11 +44,6 @@ android {
             "PREAT_SERVER_BASE_URL_RELEASE",
             properties.getProperty("PREAT_SERVER_BASE_URL_RELEASE")
         )
-        buildConfigField(
-            "String", "KAKAO_NATIVE_APP_KEY", properties.getProperty("KAKAO_NATIVE_APP_KEY")
-        )
-        manifestPlaceholders["NATIVE_APP_KEY"] =
-            properties.getProperty("KAKAO_NATIVE_APP_KEY_NO_QUOTES")
     }
     buildTypes {
         getByName("release") {
@@ -59,6 +65,7 @@ dependencies {
     implementation(project(":common"))
     implementation(project(":feature:auth"))
     implementation(project(":feature:sign-up"))
+    implementation(project(":feature:main"))
     implementation(project(":navigator"))
 
     // Kotlin
@@ -141,6 +148,9 @@ dependencies {
 
     // Kakao Login
     implementation(ThirdPartyDependencies.kakaoAuth)
+
+    // Naver Map Compose
+    implementation (ThirdPartyDependencies.naverMapCompose)
 
     // RxBinding
     implementation(ThirdPartyDependencies.rxBinding)

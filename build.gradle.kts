@@ -18,6 +18,7 @@ allprojects {
         google()
         mavenCentral()
         maven(url = "https://devrepo.kakao.com/nexus/content/groups/public/")
+        maven("https://naver.jfrog.io/artifactory/maven/")
     }
 }
 
